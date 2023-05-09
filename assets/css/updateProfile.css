@@ -1,0 +1,15 @@
+.sign_up {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 20px; }
+
+.btn-primary {
+  margin-top: 10px; }
+
+.btn {
+  background-color: gold;
+  color: black; }
+
+.btn:hover {
+  background-color: lime;
+  color: black; }

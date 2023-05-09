@@ -1,0 +1,36 @@
+.welcome-note {
+  text-align: center; }
+
+.post-textarea {
+  border-radius: 5px;
+  border: 2px solid black;
+  resize: none;
+  margin: 2px 0; }
+
+.post-list {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0; }
+
+.toast {
+  margin: 0;
+  width: 500px; }
+
+.btn-light {
+  border: 2px solid black; }
+
+.btn {
+  background-color: gold;
+  color: black; }
+
+.btn:hover {
+  background-color: lime;
+  color: black; }
+
+.post-postlist-container {
+  display: flex;
+  flex-direction: row; }
+
+#posts-list-container ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }

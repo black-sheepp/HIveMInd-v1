@@ -1,0 +1,71 @@
+<div id="post-comments">
+    <% if (locals.user){ %>
+    <div
+      class="container justify-content-center border-left border-right"
+    >
+      <div>
+        <form
+          action="/comments/create"
+          style="display: flex"
+          method="post"
+        >
+          <input
+            type="text"
+            name="content"
+            placeholder="+ Add a Comment"
+            class="form-control addtxt"
+            style="padding: 2px; font-size: small; width: 250px;"
+          />
+          <input type="hidden" name="post" value="<%= post._id %>" />
+          <input
+            type="submit"
+            value="Comment"
+            style="
+              margin-left: 10px;
+              background-color: gold;
+              border-radius: 5px;
+              border: 2px solid black;
+            "
+          />
+        </form>
+      </div>
+      <div class="d-flex justify-content" style="width: 100%">
+        <div
+          class="d-flex justify-content-between"
+          style="display: flex; flex-direction: column; padding: 0"
+        >
+          <% for(comment of post.comments) {%>
+          <div>
+            <span
+              class="text2"
+              style="
+                color: gold;
+                text-align: left;
+                margin-right: 10px; ;
+              "
+            >
+              <%= comment.user.firstName %>
+            </span>
+            <% if(locals.user && locals.user.id == comment.user.id){%>
+            <a href="/comments/destroy/<%= comment.id %>"
+              ><img
+                src="https://cdn-icons-png.flaticon.com/512/9034/9034953.png"
+                alt="Delete Comment"
+                width="18px"
+                height="18px"
+                style="margin-bottom: 7px"
+            /></a>
+            <% } %>
+          </div>
+          <div>
+            <p style="color: white; margin-left: 20px">
+              <%= comment.content %>
+            </p>
+          </div>
+          <%} %>
+        </div>
+      </div>
+    </div>
+
+    <% } %>
+  </div>

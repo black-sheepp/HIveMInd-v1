@@ -1,0 +1,31 @@
+<div id="posts-list-container">
+    <ul>
+      <% for(post of posts){ %>
+      <li class="post-list" id="post-<%= post._id %>">
+        <div
+          class="toast show"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <strong class="me-auto"> <%= post.user.firstName %> </strong>
+            <small> Query </small>
+            <% if(locals.user && locals.user.id == post.user.id){%>
+            <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">
+              <button type="button" class="btn-close ms-2 mb-1">
+                <span aria-hidden="true"></span>
+              </button>
+            </a>
+            <%} %>
+          </div>
+          <div class="toast-body" style="background-color: #231e39">
+            <p style="color: gold; font-size: larger"><%= post.content %></p>
+            <hr style="color: lime;">
+            <%- include('_comment.ejs') %>
+          </div>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>

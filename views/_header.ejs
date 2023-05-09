@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="/css/_header.css" />
+
+<nav class="navbar navbar-expand-lg bg">
+  <div class="container-fluid">
+    <div class="loader">
+      <div class="face">
+        <div class="circle"></div>
+      </div>
+      <div class="face">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <a href="/">
+      <button data-text="Awesome" class="button">
+        <span class="actual-text">&nbsp;HiveMind&nbsp;</span>
+        <span class="hover-text" aria-hidden="true">&nbsp;HiveMind&nbsp;</span>
+      </button>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarColor02"
+      aria-controls="navbarColor02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav ms-auto">
+        <% if(locals.user){ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/profile/<%= user.id %>">
+            <%= user.firstName %>
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/sign-out">Sign Out</a>
+        </li>
+        <% }else{ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/sign-in"
+            >Sign In
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/sign-up">Sign Up</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="/css/home.css" />
+
+<div class="home-page">
+  <% if(locals.user){ %>
+  <div class="post-postlist-container" style="display: flex;">
+    <div class="postandpostlist-container">
+      <div class="post-container">
+        <legend style="font-weight: bold">
+          Welcome to the HiveMind, <%= user.firstName %> !
+        </legend>
+        <h4>Post Your Query</h4>
+        <section id="feed-post">
+          <form action="/posts/create" id="new-post-form" method="post">
+            <textarea
+              class="post-textarea"
+              name="content"
+              cols="40"
+              rows="4"
+              placeholder="Type Here..."
+            ></textarea>
+            <br />
+            <button type="submit" class="btn btn-light">Post</button>
+          </form>
+        </section>
+      </div>
+      <%- include('_post') %>
+    </div>
+    <%- include('_friendList.ejs') %>
+  </div>
+  
+
+  <% }else{ %>
+  <legend style="text-align: center; font-size: 30px; margin-top: 30px">
+    Welcome to the HiveMind !!
+  </legend>
+  <p class="welcome-note">
+    You are now part of a collective intelligence that harnesses the power of
+    distributed computing and networked devices to solve complex problems and
+    create innovative solutions. Together, we can achieve more than any one
+    individual could on their own. By working in a coordinated and decentralized
+    manner, we can tap into the diverse perspectives, knowledge, and skills of
+    our network to generate new ideas and make progress towards our shared
+    goals. Let's use our collective intelligence to push the boundaries of what
+    is possible and create a better future for all.
+  </p>
+
+  <!-- Post or Queries display on home page for public -->
+  <h4>Queries</h4>
+  <div id="posts-list-container">
+    <ul>
+      <% for(post of posts){ %>
+      <li class="post-list">
+        <div
+          class="toast show"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <strong class="me-auto"> <%= post.user.firstName %> </strong>
+            <small> Query </small>
+          </div>
+          <div class="toast-body" style="background-color: #231e39">
+            <p style="color: gold"><%= post.content %></p>
+          </div>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <% } %>
+</div>
+
+

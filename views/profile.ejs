@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="/css/profile.css" />
+
+<div class="profile-page">
+  <% if(user.id == profile_user.id) {%>
+  <div class="card-container">
+    <img
+      class="round"
+      src="<%=profile_user.avatar %>"
+      alt="<%= user.firstName %>"
+    />
+    <h3 style="color: lime">
+      <%= profile_user.firstName %> <%= profile_user.lastName %>
+    </h3>
+    <h6 style="color: gold"><%= profile_user.jobProfile %></h6>
+    <div class="buttons">
+      <button type="disabled" class="primary" style="pointer-events: none">
+        <%= profile_user.companyName %>
+      </button>
+      <br />
+      <a href="/users/update/<%= user.id %>">
+        <button
+          class="primary"
+          style="
+            background-color: blue;
+            color: white;
+            font-size: small;
+            margin-top: 10px;
+          "
+        >
+          <strong>Update Profile</strong>
+        </button>
+      </a>
+    </div>
+    <div class="details-field">
+      <div class="cred-row">
+        <p class="object-field">Name:</p>
+        <p class="user-field">
+          <%= profile_user.firstName %> <%= profile_user.lastName %>
+        </p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Email:</p>
+        <p class="user-field"><%= profile_user.email %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Phone:</p>
+        <p class="user-field"><%= profile_user.phone %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Address:</p>
+        <p class="user-field"><%= profile_user.address %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Job Profile:</p>
+        <p class="user-field"><%= profile_user.jobProfile %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Company:</p>
+        <p class="user-field"><%= profile_user.companyName %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Skills:</p>
+        <p class="user-field"><%= profile_user.skills %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">LinkedIn:</p>
+        <p class="user-field"><%= profile_user.linkedIn %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">GitHub:</p>
+        <p class="user-field"><%= profile_user.github %></p>
+      </div>
+    </div>
+  </div>
+  <% }else{ %>
+  <div class="card-container">
+    <img class="round" src="<%= profile_user.avatar %>" alt="<%= profile_user.firstName %>" />
+    <h3 style="color: lime">
+      <%= profile_user.firstName %> <%= profile_user.lastName %>
+    </h3>
+    <h6 style="color: gold"><%= profile_user.jobProfile %></h6>
+    <div class="buttons">
+      <button type="disabled" class="primary" style="pointer-events: none">
+        <%= profile_user.companyName %>
+      </button>
+    </div>
+    <div class="details-field">
+      <div class="cred-row">
+        <p class="object-field">Name:</p>
+        <p class="user-field">
+          <%= profile_user.firstName %> <%= profile_user.lastName %>
+        </p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Email:</p>
+        <p class="user-field"><%= profile_user.email %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Phone:</p>
+        <p class="user-field"><%= profile_user.phone %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Address:</p>
+        <p class="user-field"><%= profile_user.address %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Job Profile:</p>
+        <p class="user-field"><%= profile_user.jobProfile %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Company:</p>
+        <p class="user-field"><%= profile_user.companyName %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">Skills:</p>
+        <p class="user-field"><%= profile_user.skills %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">LinkedIn:</p>
+        <p class="user-field"><%= profile_user.linkedIn %></p>
+      </div>
+      <div class="cred-row">
+        <p class="object-field">GitHub:</p>
+        <p class="user-field"><%= profile_user.github %></p>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>

@@ -1,0 +1,18 @@
+<div class="friendList-container" style="margin-left: auto; padding-right: 0%">
+  <h3 style="text-align: left">Friends</h3>
+
+  <ul class="list-group">
+    <% for(one_user of all_users) {%>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      style="padding: 5px 10px; background-color: #231e39; border: none"
+    >
+      <a
+        href="/users/profile/<%= one_user.id %>"
+        style="text-decoration: none; color: gold; width: 170px"
+        > <strong style="color: limegreen;">|</strong> <%= one_user.firstName %> <%= one_user.lastName %></a
+      >
+    </li>
+    <% } %>
+  </ul>
+</div>
